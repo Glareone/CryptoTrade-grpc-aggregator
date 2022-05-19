@@ -6,8 +6,7 @@ package crypto;
 
 // The greeting service definition.
 service HistoricalFeed {
-	// Sends a greeting
-	rpc Subscribe (SubscribeRequest) returns (HistoricalReply);
+	rpc Subscribe (SubscribeRequest) returns (stream HistoricalReply);
 }
 
 // The request contains ExchangeType and currency code
