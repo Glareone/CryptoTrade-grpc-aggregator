@@ -28,11 +28,10 @@ namespace grpcServer.Services
             var i = 0;
             while (!context.CancellationToken.IsCancellationRequested && i < 20)
             {
-                await Task.Delay(500); // Gotta look busy
+                await Task.Delay(100);
 
                 var historicalMessage = new HistoricalReply
                 {
-                    //Timestamp = Timestamp.FromDateTime(now.AddDays(i++)),
                     Timestamp = new DateTimeOffset(DateTime.UtcNow).ToUnixTimeSeconds(),
                     Open = GetPseudoDoubleWithinRange(32000, 38000),
                     Close = GetPseudoDoubleWithinRange(32000, 36000),
